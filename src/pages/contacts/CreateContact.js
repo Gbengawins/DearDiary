@@ -63,8 +63,8 @@ export default function Create() {
   // This following section will display the form that takes the input from the user.
   return (
     <div>
-      <h3>Create Contact</h3>
       <form onSubmit={onSubmit}>
+      <h3>Create Contact</h3>
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -216,4 +216,4 @@ export default function Create() {
       </form>
     </div>
   );
-}
+};
