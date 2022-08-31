@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 export default function Create() {
   const [form, setForm] = useState({
     name: "",
+    birthday: "",
     phone: "",
     email: "",
     address: "",
@@ -45,6 +46,7 @@ export default function Create() {
 
     setForm({
       name: "",
+      birthday: "",
       phone: "",
       email: "",
       address: "",
@@ -64,7 +66,7 @@ export default function Create() {
   return (
     <div>
       <form onSubmit={onSubmit}>
-      <h3>Create Contact</h3>
+        <h3>Create Contact</h3>
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -76,7 +78,7 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="birthday">Birth Date</label>
+          <label htmlFor="birthday">Date of Birth</label>
           <input
             type="text"
             className="form-control"
@@ -204,6 +206,16 @@ export default function Create() {
               Friendly
             </label>
           </div>
+          <div className="form-group">
+            <label htmlFor="created_at">Created At:</label>
+            <input
+              type="timestamp"
+              className="form-control"
+              id="created_at"
+              value={form.created_at}
+              onChange={(e) => updateForm({ created_at: e.target.value })}
+            />
+          </div>
         </div>
 
         <div className="form-group">
@@ -216,4 +228,4 @@ export default function Create() {
       </form>
     </div>
   );
-};
+}

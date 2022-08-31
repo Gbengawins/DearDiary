@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router";
 export default function Edit() {
  const [form, setForm] = useState({
   name: "",
+  birthday: "",
   phone: "",
   email: "",
   address: "",
@@ -57,6 +58,7 @@ export default function Edit() {
    e.preventDefault();
    const editedContact = {
      name: form.name,
+     birthday: form.birthday,
      phone: form.phone,
      email: form.email,
      address: form.address,
@@ -98,7 +100,7 @@ export default function Edit() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="birthday">Birth Date</label>
+          <label htmlFor="birthday">Date of Birth</label>
           <input
             type="text"
             className="form-control"
@@ -197,6 +199,7 @@ export default function Edit() {
             onChange={(e) => updateForm({ website: e.target.value })}
           />
         </div>
+        
         <div className="form-group">
           <div className="form-check form-check-inline">
             <input
@@ -226,6 +229,16 @@ export default function Edit() {
               Friendly
             </label>
           </div>
+          <div className="form-group">
+          <label htmlFor="created_at">Created At:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="created_at"
+            value={form.created_at}
+            onChange={(e) => updateForm({ created_at: e.target.value })}
+          />
+        </div>
        </div>
        <br />
  
