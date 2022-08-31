@@ -35,7 +35,7 @@ export default function ContactList() {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getContacts() {
-     const response = await fetch(`http://localhost:5000/contact/`);
+     const response = await fetch(`http://localhost:7000/contact/`);
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
@@ -54,7 +54,7 @@ export default function ContactList() {
  
  // This method will delete a record
  async function deleteContact(id) {
-   await fetch(`http://localhost:5000/${id}`, {
+   await fetch(`http://localhost:7000/${id}`, {
      method: "DELETE"
    });
  
